@@ -10,6 +10,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -17,10 +18,10 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
-           
-            <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        
+        <TextBlock Text="Авторизация" Grid.ColumnSpan="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" FontStyle="Italic" Grid.RowSpan="2"/>
+        <TextBlock Text="Пользователь" Grid.Row="2" Grid.Column="1"/>
+        <ComboBox/>
     </Grid>
 </Window>
