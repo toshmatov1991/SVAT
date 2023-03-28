@@ -37,13 +37,18 @@ namespace Soliders
         private void openWin_Click(object sender, RoutedEventArgs e)
         {
             //При нажатии на кнопку Войти
-            if(string.IsNullOrEmpty(polzovatel.Text) && string.IsNullOrEmpty(password_user.Password)
+            if (string.IsNullOrEmpty(polzovatel.Text) && string.IsNullOrEmpty(password_user.Password)
                 || string.IsNullOrEmpty(polzovatel.Text) || string.IsNullOrEmpty(password_user.Password))
             {
                 MessageBox.Show("Вы пропустили одно или несколько полей", "Внимательно!", MessageBoxButton.OK, MessageBoxImage.None);
             }
             else
-                MessageBox.Show("Все хорошо", "Молодец!", MessageBoxButton.OK, MessageBoxImage.None);
+            {
+                User user = new();
+                user.Show();
+                Close();
+            }
+               
         }
     }
 }
