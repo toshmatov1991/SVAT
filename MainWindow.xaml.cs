@@ -32,6 +32,15 @@ namespace Soliders
                 || string.IsNullOrEmpty(polzovatel.Text) || string.IsNullOrEmpty(password_user.Password))
             {
                 MessageBox.Show("Вы пропустили одно или несколько полей", "Внимательно!", MessageBoxButton.OK, MessageBoxImage.None);
+                if (polzovatel.Text == "")
+                {
+                    polzovatel.BorderBrush = Brushes.Red;
+                }
+              
+                if (password_user.Password == "")
+                {
+                    password_user.BorderBrush = Brushes.Red;
+                }
             }
             else
             {
@@ -49,15 +58,21 @@ namespace Soliders
                             Close();
                         }
                     }
-                    if (stage)
+                    if (!stage)
                     {
                         foreach (var item in getmyworks)
                         {
+                            int y = 0;
                             //Если неправильный логин, то подсвечиваю рамку красным
                             if (polzovatel.Text != item.Login)
                             {
+                                //ПОКА ЗАБИл
                                 polzovatel.BorderBrush = Brushes.Red;
                             }
+                            
+                        }
+                        foreach (var item in getmyworks)
+                        {
                             //Если пароль неправильный, тоже самое
                             if (password_user.Password != item.Pass)
                             {
@@ -71,6 +86,9 @@ namespace Soliders
             }
                
         }
+
+
+
 
 
 
