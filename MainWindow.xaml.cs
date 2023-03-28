@@ -25,16 +25,6 @@ namespace Soliders
         }
 
 
-
-
-        //Метод хэширования вводимого пароля
-        private string GH(string input)
-        {
-            var md5 = MD5.Create();
-            var hash = md5.ComputeHash(Encoding.UTF8.GetBytes(input));
-            return Convert.ToBase64String(hash);
-        }
-
         private void openWin_Click(object sender, RoutedEventArgs e)
         {
             //При нажатии на кнопку Войти
@@ -61,12 +51,56 @@ namespace Soliders
                     }
                     if (stage)
                     {
-
+                        foreach (var item in getmyworks)
+                        {
+                            //Если неправильный логин, то подсвечиваю рамку красным
+                            if (polzovatel.Text != item.Login)
+                            {
+                                polzovatel.BorderBrush = Brushes.Red;
+                            }
+                            //Если пароль неправильный, тоже самое
+                            if (password_user.Password != item.Pass)
+                            {
+                                password_user.BorderBrush = Brushes.Red;
+                            }
+                        }
+                        MessageBox.Show("Неправильный логин или пароль", "Внимательно!", MessageBoxButton.OK, MessageBoxImage.None);
                     }
                 }
                
             }
                
+        }
+
+
+
+
+        #region При нажатии на кнопку меняем красную рамку на черный
+        private void GoBlack(object sender, KeyEventArgs e)
+        {
+            polzovatel.BorderBrush = Brushes.Black;
+        }
+
+        private void GoGoBlack(object sender, KeyEventArgs e)
+        {
+            password_user.BorderBrush = Brushes.Black;
+        }
+        #endregion
+
+        private void Check(object sender, KeyEventArgs e)
+        {
+            //При нажатии на Enter когда курсор в логине
+            if (e.Key == Key.Enter)
+                openWin_Click(sender, e);
+
+
+        }
+
+        private void CheckPas(object sender, KeyEventArgs e)
+        {
+            //При нажатии на Enter когда курсор на пароле
+            if (e.Key == Key.Enter)
+                openWin_Click(sender, e);
         }
     }
 }
