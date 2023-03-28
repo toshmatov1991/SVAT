@@ -22,8 +22,17 @@ namespace Soliders
         public MainWindow()
         {
             InitializeComponent();
+            Start();
         }
 
+        private void Start()
+        {
+            using (PrContext db = new())
+            {
+                var ger = db.Works.ToList();
+                foreach (var item in ger) { }
+            }
+        }
 
         private void openWin_Click(object sender, RoutedEventArgs e)
         {
@@ -60,25 +69,19 @@ namespace Soliders
                     }
                     if (!stage)
                     {
+                        int l = 0, p = 0;
                         foreach (var item in getmyworks)
                         {
-                            int y = 0;
-                            //Если неправильный логин, то подсвечиваю рамку красным
-                            if (polzovatel.Text != item.Login)
-                            {
-                                //ПОКА ЗАБИл
-                                polzovatel.BorderBrush = Brushes.Red;
-                            }
+                            if (polzovatel.Text == item.Login)
+                                l++;
                             
+                            if (password_user.Password == item.Pass)
+                                p++;
                         }
-                        foreach (var item in getmyworks)
-                        {
-                            //Если пароль неправильный, тоже самое
-                            if (password_user.Password != item.Pass)
-                            {
-                                password_user.BorderBrush = Brushes.Red;
-                            }
-                        }
+                       if(l == 0)
+                            polzovatel.BorderBrush = Brushes.Red;
+                        if (p == 0)
+                            password_user.BorderBrush = Brushes.Red;
                         MessageBox.Show("Неправильный логин или пароль", "Внимательно!", MessageBoxButton.OK, MessageBoxImage.None);
                     }
                 }
