@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Soliders.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -44,9 +45,26 @@ namespace Soliders
             }
             else
             {
-                User user = new();
-                user.Show();
-                Close();
+                using(PrContext db = new())
+                {
+                    var getmyworks = db.Works.ToList();
+                    bool stage = false;
+                    foreach (var item in getmyworks)
+                    {
+                        if(polzovatel.Text == item.Login && password_user.Password == item.Pass)
+                        {
+                            stage= true;
+                            User user = new($"{item.Firstname} {item.Name} {item.Lastname}");
+                            user.Show();
+                            Close();
+                        }
+                    }
+                    if (stage)
+                    {
+
+                    }
+                }
+               
             }
                
         }

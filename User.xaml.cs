@@ -23,5 +23,11 @@ namespace Soliders
         {
             InitializeComponent();
         }
+
+        public User(string iduser)
+        {
+            InitializeComponent();
+            Title = iduser;
+        }
     }
 }
