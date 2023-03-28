@@ -86,15 +86,8 @@ namespace Soliders
                     }
                 }
                
-            }
-               
+            }  
         }
-
-
-
-
-
-
 
         #region При нажатии на кнопку меняем красную рамку на черный
         private void GoBlack(object sender, KeyEventArgs e)
@@ -113,8 +106,6 @@ namespace Soliders
             //При нажатии на Enter когда курсор в логине
             if (e.Key == Key.Enter)
                 openWin_Click(sender, e);
-
-
         }
 
         private void CheckPas(object sender, KeyEventArgs e)
