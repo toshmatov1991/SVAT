@@ -21,13 +21,22 @@ namespace Soliders
     {
         public User()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
 
         public User(string iduser)
         {
             InitializeComponent();
             Title = iduser;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            //AppDomain.CurrentDomain.BaseDirectory
+            var str = AppDomain.CurrentDomain.BaseDirectory;
+
+            MessageBox.Show(str, "Относительный путь");
         }
     }
 }
