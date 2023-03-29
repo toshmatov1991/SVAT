@@ -31,6 +31,7 @@ namespace Soliders
             {
                 var ger = db.Works.ToList();
                 foreach (var item in ger) { }
+                polzovatel.Focus();
             }
         }
 
