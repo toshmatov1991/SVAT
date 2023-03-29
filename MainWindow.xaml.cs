@@ -47,7 +47,7 @@ namespace Soliders
                     polzovatel.BorderBrush = Brushes.Red;
                 }
               
-                if (password_user.Password == "")
+                if (password_user.Password == "") 
                 {
                     password_user.BorderBrush = Brushes.Red;
                 }
