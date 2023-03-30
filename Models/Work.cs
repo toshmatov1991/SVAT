@@ -17,5 +17,7 @@ public partial class Work
 
     public string? Pass { get; set; }
 
+    public long Admin { get; set; }
+
     public virtual ICollection<Commission> Commissions { get; } = new List<Commission>();
 }

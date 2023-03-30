@@ -73,6 +73,7 @@ public partial class PrContext : DbContext
             entity.Property(e => e.Login).HasColumnName("login");
             entity.Property(e => e.Name).HasColumnName("name");
             entity.Property(e => e.Pass).HasColumnName("pass");
+            entity.Property(e => e.Pass).HasColumnName("admin");
         });
 
         OnModelCreatingPartial(modelBuilder);
