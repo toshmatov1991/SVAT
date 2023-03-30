@@ -79,14 +79,13 @@ namespace Soliders
                             if (password_user.Password == item.Pass)
                                 p++;
                         }
-                       if(l == 0)
+                        if(l == 0)
                             polzovatel.BorderBrush = Brushes.Red;
                         if (p == 0)
                             password_user.BorderBrush = Brushes.Red;
                         MessageBox.Show("Неправильный логин или пароль", "Внимательно!", MessageBoxButton.OK, MessageBoxImage.None);
                     }
                 }
-               
             }  
         }
 

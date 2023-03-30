@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace Soliders
 {
-    /// <summary>
-    /// Логика взаимодействия для User.xaml
-    /// </summary>
     public partial class User : Window
     {
         public User()
@@ -36,7 +34,19 @@ namespace Soliders
             //AppDomain.CurrentDomain.BaseDirectory
             var str = AppDomain.CurrentDomain.BaseDirectory;
 
-            MessageBox.Show(str, "Относительный путь");
+            MessageBox.Show(str, "Абсолютный путь");
+
+
+           
+
+
+
+
+            
+
+           
+
+
         }
     }
 }
