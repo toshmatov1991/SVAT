@@ -23,9 +23,9 @@ namespace Soliders
         {
             InitializeComponent();
             Start();
-            //User user = new();
-            //user.Show();
-            //Close();
+            User user = new();
+            user.Show();
+            Close();
         }
 
         private void Start()

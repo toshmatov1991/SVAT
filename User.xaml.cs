@@ -28,5 +28,16 @@ namespace Soliders
             Title = iduser;
         }
 
+
+
+
+
+
+
+
+
+
+
+
     }
 }
