@@ -30,20 +30,12 @@ namespace Soliders
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
-            //AppDomain.CurrentDomain.BaseDirectory
-            var str = AppDomain.CurrentDomain.BaseDirectory;
-
-            MessageBox.Show(str, "Абсолютный путь");
-
-
-           
-
-
-
-
-            
-
+            var x = Directory.GetCurrentDirectory();
+            var y = Directory.GetParent(x).FullName;
+            var c = Directory.GetParent(y).FullName;
+            var r = Directory.GetParent(c).FullName;
+            //MessageBox.Show($"{r}" + @"\DA\pr.db");
+            MessageBox.Show($"{r}\\DA\\pr.db");
            
 
 

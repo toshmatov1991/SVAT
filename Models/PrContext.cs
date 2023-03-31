@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Windows;
 using Microsoft.EntityFrameworkCore;
 
 namespace Soliders.Models;
 
 public partial class PrContext : DbContext
 {
+    //Строка для получения пути к бд
+    string der = PacHt();
     public PrContext()
     {
     }
@@ -21,8 +25,11 @@ public partial class PrContext : DbContext
 
     public virtual DbSet<Work> Works { get; set; }
 
+    
+
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlite("Filename=pr.db");
+        => optionsBuilder.UseSqlite(der);
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -78,6 +85,18 @@ public partial class PrContext : DbContext
 
         OnModelCreatingPartial(modelBuilder);
     }
+
+
+    //Относительный путь
+    static private string PacHt()
+    {
+        var x = Directory.GetCurrentDirectory();
+        var y = Directory.GetParent(x).FullName;
+        var c = Directory.GetParent(y).FullName;
+        var r = "Data Source=" + Directory.GetParent(c).FullName + @"\DA\pr.db";
+        return r;
+    }
+
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }
