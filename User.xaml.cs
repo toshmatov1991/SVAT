@@ -28,17 +28,5 @@ namespace Soliders
             Title = iduser;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            var x = Directory.GetCurrentDirectory();
-            var y = Directory.GetParent(x).FullName;
-            var c = Directory.GetParent(y).FullName;
-            var r = Directory.GetParent(c).FullName;
-            //MessageBox.Show($"{r}" + @"\DA\pr.db");
-            MessageBox.Show($"{r}\\DA\\pr.db");
-           
-
-
-        }
     }
 }
