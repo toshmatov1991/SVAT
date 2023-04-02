@@ -22,28 +22,18 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <ListView x:Name="listviewUsers" HorizontalAlignment="Stretch"  
+        <ListView x:Name="listviewUsers" HorizontalAlignment="Stretch" Grid.ColumnSpan="6" Grid.RowSpan="5" 
                   Margin="5" VerticalAlignment="Stretch" SelectionMode="Extended" IsSynchronizedWithCurrentItem="True">
-            <!--Ресурсы-->
-            <ListView.Resources>
-                <!--Стили-->
-                <Style TargetType="TextBlock">
-                    <!--Событие-->
-                    <EventSetter Event="MouseRightButtonUp" Handler="OnMouseRightButtonUp"/>
-                    <!--Триггер-->
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="DarkSalmon"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </ListView.Resources>
             <ListView.View>
                 <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Id, Mode=OneWay}" 
-                      Header="Код" Width="40"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=PositionName, Mode=OneWay}" 
-                      Header="Наименование должности" Width="450"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Id, Mode=OneWay}" Header="Фамилия" Width="100"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=PositionName, Mode=OneWay}" Header="Имя" Width="100"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=PositionName, Mode=OneWay}" Header="Отчество" Width="100"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=PositionName, Mode=OneWay}" Header="Дата рождения" Width="100"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=PositionName, Mode=OneWay}" Header="Категория" Width="100"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=PositionName, Mode=OneWay}" Header="Паспорт" Width="100"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=PositionName, Mode=OneWay}" Header="Снилс" Width="100"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=PositionName, Mode=OneWay}" Header="Статус" Width="100"/>
                 </GridView>
             </ListView.View>
         </ListView>

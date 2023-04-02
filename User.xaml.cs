@@ -29,22 +29,5 @@ namespace Soliders
         }
 
 
-
-
-            DirectoryInfo directoryInfo = Directory.GetParent(str);
-            directoryInfo = Directory.GetParent(str);
-            directoryInfo = Directory.GetParent(str);
-            directoryInfo = Directory.GetParent(str);
-
-            MessageBox.Show(directoryInfo.FullName);
-
-
-
-
-
-
-
-
-
     }
 }
