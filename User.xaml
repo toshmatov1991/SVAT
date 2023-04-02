@@ -13,6 +13,7 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
@@ -22,18 +23,18 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <ListView x:Name="listviewUsers" HorizontalAlignment="Stretch" Grid.ColumnSpan="5" Grid.RowSpan="4" Grid.Row="1"
-                  Margin="5" VerticalAlignment="Stretch" SelectionMode="Extended" IsSynchronizedWithCurrentItem="True">
+        <ListView x:Name="listviewUsers" HorizontalAlignment="Stretch" Grid.ColumnSpan="6" Grid.RowSpan="4" Grid.Row="1"
+                  Margin="25 0 0 0" VerticalAlignment="Stretch" SelectionMode="Extended" IsSynchronizedWithCurrentItem="True">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Id, Mode=OneWay}" Header="Фамилия" Width="100"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=PositionName, Mode=OneWay}" Header="Имя" Width="100"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=PositionName, Mode=OneWay}" Header="Отчество" Width="100"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=PositionName, Mode=OneWay}" Header="Дата рождения" Width="100"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=PositionName, Mode=OneWay}" Header="Категория" Width="100"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=PositionName, Mode=OneWay}" Header="Паспорт" Width="100"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=PositionName, Mode=OneWay}" Header="Снилс" Width="100"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=PositionName, Mode=OneWay}" Header="Статус" Width="100"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Firstname, Mode=OneWay}" Header="Фамилия" Width="110"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Name, Mode=OneWay}" Header="Имя" Width="110"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Lastname, Mode=OneWay}" Header="Отчество" Width="110"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=DateOfBirth, Mode=OneWay}" Header="Дата рождения" Width="110"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Category, Mode=OneWay}" Header="Категория" Width="110"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Passport, Mode=OneWay}" Header="Паспорт" Width="110"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Snils, Mode=OneWay}" Header="Снилс" Width="150"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Status, Mode=OneWay}" Header="Статус" Width="110"/>
                 </GridView>
             </ListView.View>
         </ListView>
