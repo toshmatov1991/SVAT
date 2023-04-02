@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" Icon="Resources/ar1.png" WindowStartupLocation="CenterScreen"
-        Title="Главное окно" Height="800" Width="1200">
+        Title="Главное окно" Height="700" Width="1100">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -22,7 +22,7 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <ListView x:Name="listviewUsers" HorizontalAlignment="Stretch" Grid.ColumnSpan="6" Grid.RowSpan="5" 
+        <ListView x:Name="listviewUsers" HorizontalAlignment="Stretch" Grid.ColumnSpan="5" Grid.RowSpan="4" Grid.Row="1"
                   Margin="5" VerticalAlignment="Stretch" SelectionMode="Extended" IsSynchronizedWithCurrentItem="True">
             <ListView.View>
                 <GridView>
