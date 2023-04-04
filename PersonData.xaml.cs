@@ -14,14 +14,23 @@ using System.Windows.Shapes;
 
 namespace Soliders
 {
-    /// <summary>
-    /// Логика взаимодействия для PersonData.xaml
-    /// </summary>
     public partial class PersonData : Window
     {
         public PersonData()
         {
             InitializeComponent();
         }
+
+        public PersonData(int idPerson)
+        {
+            InitializeComponent();
+        }
+
+
+
+
+
+
+
     }
 }
