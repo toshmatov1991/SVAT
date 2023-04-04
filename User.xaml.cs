@@ -66,5 +66,12 @@ namespace Soliders
         {
 
         }
+
+
+        /*Подробнее о персоне*/
+        private void MoreAboutThePerson(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }
