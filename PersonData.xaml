@@ -21,6 +21,7 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <TextBlock Text="Новый призывник"
                    FontSize="30"
@@ -29,40 +30,42 @@
                    Margin="15"
                    />
         <TextBlock Text="Фамилия"
-                   FontSize="25"
+                   FontSize="20"
                    Grid.Row="1"
-                   Grid.ColumnSpan="2"
+                   Grid.ColumnSpan="1"
                    VerticalAlignment="Top"
                    Margin="15 0 0 0"/>
         <TextBox   FontSize="20"
                    Grid.Row="1"
-                   Grid.ColumnSpan="2"
+                   Grid.ColumnSpan="1"
                    VerticalAlignment="Bottom"
                    VerticalContentAlignment="Center"
-                   Margin="15,0,175,68" Grid.RowSpan="2"/>
+                   Margin="15 0 0 0"/>
         <TextBlock Text="Имя"
-                   FontSize="25"
-                   Grid.Row="2"
-                   Grid.ColumnSpan="2"
+                   FontSize="20"
+                   Grid.Row="1"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="1"
                    VerticalAlignment="Top"
                    Margin="15 0 0 0"/>
         <TextBox   FontSize="20"
-                   Grid.Row="2"
-                   Grid.ColumnSpan="2"
+                   Grid.Row="1"
+                   Grid.Column="1"
+                   Grid.ColumnSpan="1"
                    VerticalAlignment="Bottom"
                    VerticalContentAlignment="Center"
-                   Margin="15,0,175,68" Grid.RowSpan="2"/>
+                   Margin="15 0 0 0"/>
         <TextBlock Text="Отчество"
-                   FontSize="25"
-                   Grid.Row="3"
-                   Grid.ColumnSpan="2"
+                   FontSize="20"
+                   Grid.Row="2"
+                   Grid.ColumnSpan="1"
                    VerticalAlignment="Top"
                    Margin="15 0 0 0"/>
         <TextBox   FontSize="20"
-                   Grid.Row="3"
-                   Grid.ColumnSpan="2"
+                   Grid.Row="2"
+                   Grid.ColumnSpan="1"
                    VerticalAlignment="Bottom"
                    VerticalContentAlignment="Center"
-                   Margin="15,0,175,68" Grid.RowSpan="2"/>
+                   Margin="15 0 0 0"/>
     </Grid>
 </Window>
