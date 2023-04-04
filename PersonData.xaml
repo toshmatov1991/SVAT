@@ -4,8 +4,65 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" Icon="Resources/ar1.png"
-        Title="Добавить физическое лицо" Height="600" Width="450">
+        Title="Добавить физическое лицо" Height="700" Width="450">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Новый призывник"
+                   FontSize="30"
+                   Grid.ColumnSpan="2"
+                   VerticalAlignment="Center"
+                   Margin="15"
+                   />
+        <TextBlock Text="Фамилия"
+                   FontSize="25"
+                   Grid.Row="1"
+                   Grid.ColumnSpan="2"
+                   VerticalAlignment="Top"
+                   Margin="15 0 0 0"/>
+        <TextBox   FontSize="20"
+                   Grid.Row="1"
+                   Grid.ColumnSpan="2"
+                   VerticalAlignment="Bottom"
+                   VerticalContentAlignment="Center"
+                   Margin="15,0,175,68" Grid.RowSpan="2"/>
+        <TextBlock Text="Имя"
+                   FontSize="25"
+                   Grid.Row="2"
+                   Grid.ColumnSpan="2"
+                   VerticalAlignment="Top"
+                   Margin="15 0 0 0"/>
+        <TextBox   FontSize="20"
+                   Grid.Row="2"
+                   Grid.ColumnSpan="2"
+                   VerticalAlignment="Bottom"
+                   VerticalContentAlignment="Center"
+                   Margin="15,0,175,68" Grid.RowSpan="2"/>
+        <TextBlock Text="Отчество"
+                   FontSize="25"
+                   Grid.Row="3"
+                   Grid.ColumnSpan="2"
+                   VerticalAlignment="Top"
+                   Margin="15 0 0 0"/>
+        <TextBox   FontSize="20"
+                   Grid.Row="3"
+                   Grid.ColumnSpan="2"
+                   VerticalAlignment="Bottom"
+                   VerticalContentAlignment="Center"
+                   Margin="15,0,175,68" Grid.RowSpan="2"/>
     </Grid>
 </Window>

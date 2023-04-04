@@ -16,6 +16,7 @@ namespace Soliders
 {
     public partial class PersonData : Window
     {
+        private int idPersonData = 0;
         public PersonData()
         {
             InitializeComponent();
@@ -24,6 +25,7 @@ namespace Soliders
         public PersonData(int idPerson)
         {
             InitializeComponent();
+            idPersonData = idPerson;
         }
 
 

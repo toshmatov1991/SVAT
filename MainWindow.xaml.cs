@@ -23,8 +23,10 @@ namespace Soliders
         {
             InitializeComponent();
             Start();
-            User user = new();
-            user.Show();
+            PersonData person = new();
+            person.Show();
+            //User user = new();
+            //user.Show();
             Close();
         }
 
