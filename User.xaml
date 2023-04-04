@@ -24,7 +24,7 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <TextBlock Text="Поиск" Grid.Column="2" VerticalAlignment="Center" Margin="25" FontSize="23"/>
-        <TextBox Grid.ColumnSpan="3" FontSize="15" Grid.Column="2" VerticalAlignment="Center" Height="25" Width="270" VerticalContentAlignment="Center"/>
+        <TextBox Grid.ColumnSpan="3" FontSize="15" Grid.Column="2" VerticalAlignment="Center" Height="25" Width="270" VerticalContentAlignment="Center" KeyUp="FaceSearch"/>
         <ListView x:Name="listviewUsers" HorizontalAlignment="Stretch" Grid.ColumnSpan="6" Grid.RowSpan="4" Grid.Row="1"
                   Margin="25 0 0 0" VerticalAlignment="Stretch" SelectionMode="Extended" IsSynchronizedWithCurrentItem="True">
             <ListView.View>
@@ -40,5 +40,6 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <Button Content="Добавить" Grid.Row="5" Grid.ColumnSpan="2" VerticalAlignment="Center" Width="120" Height="55" Background="AliceBlue" Click="Button_Click" />
     </Grid>
 </Window>
