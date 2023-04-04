@@ -177,10 +177,9 @@
                    Margin="15 0 0 0"/>
         <TextBox   FontSize="20"
                    Grid.Row="7"
-                   Grid.ColumnSpan="2"
                    VerticalAlignment="Bottom"
                    VerticalContentAlignment="Center"
-                   Margin="15,0,210,0"/>
+                   Margin="15,0,3,0"/>
         <TextBlock Text="Паспорт"
                    FontSize="20"
                    Grid.Row="8"
@@ -211,6 +210,24 @@
                    VerticalAlignment="Bottom"
                    VerticalContentAlignment="Center"
                    Margin="87,0,6,62" Grid.RowSpan="2"/>
-        
+        <TextBlock Text="Статус"
+                   FontSize="20"
+                   Grid.Row="7"
+                   Grid.Column="1"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Top"
+                   Margin="15 0 0 0"/>
+        <ComboBox  FontSize="20"
+                   SelectedIndex="0" 
+                   Grid.Row="7"
+                   Grid.Column="1"
+                   VerticalAlignment="Bottom"
+                   VerticalContentAlignment="Center"
+                    HorizontalAlignment="Left"
+                   Margin="15,0,0,62" Width="171" Height="32" Grid.RowSpan="2">
+            <TextBlock>Не служил</TextBlock>
+            <TextBlock>Служит</TextBlock>
+            <TextBlock>Служил</TextBlock>
+        </ComboBox>
     </Grid>
 </Window>
