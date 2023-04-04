@@ -33,8 +33,8 @@
                     <GridViewColumn DisplayMemberBinding="{Binding Path=DateOfBirth, Mode=OneWay}" Header="Дата рождения" Width="110"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Category, Mode=OneWay}" Header="Категория" Width="110"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Passport, Mode=OneWay}" Header="Паспорт" Width="110"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Snils, Mode=OneWay}" Header="Снилс" Width="150"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Status, Mode=OneWay}" Header="Статус" Width="110"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Snils, Mode=OneWay}" Header="Снилс" Width="130"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Status, Mode=OneWay}" Header="Статус" Width="103"/>
                 </GridView>
             </ListView.View>
         </ListView>
