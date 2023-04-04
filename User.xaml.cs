@@ -52,5 +52,12 @@ namespace Soliders
                 listviewUsers.ItemsSource = listConscripts.ToList();
             }
         }
+
+
+        /*Поиск призывников*/
+        private void FaceSearch(object sender, KeyEventArgs e)
+        {
+
+        }
     }
 }
