@@ -229,5 +229,12 @@
             <TextBlock>Служит</TextBlock>
             <TextBlock>Служил</TextBlock>
         </ComboBox>
+        <Button Content="Сформировать повестку"
+                Grid.Row="9"
+                Margin="10"/>
+        <Button Content="Обновить информацию"
+                Grid.Row="9"
+                Grid.Column="1"
+                Margin="10"/>
     </Grid>
 </Window>
