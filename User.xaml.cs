@@ -71,7 +71,31 @@ namespace Soliders
         /*Подробнее о персоне*/
         private void MoreAboutThePerson(object sender, MouseButtonEventArgs e)
         {
+            var str = listviewUsers.SelectedItem.ToString();
+            MessageBox.Show(ReturnIdThePerson(str));
 
+
+
+
+
+            static string ReturnIdThePerson(string a)
+            {
+                string strId = "";
+                for (int i = 0; i < a.Length; i++)
+                {
+                    if (char.IsDigit(a[i]))
+                        strId += a[i];
+                    else if (a[i] == ',')
+                        break;
+                }
+                return strId;
+            }
         }
+
+
+
+
+
+
     }
 }
