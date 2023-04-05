@@ -28,23 +28,72 @@ namespace Soliders
             idPersonData = idPerson;
         }
 
-        /*
-         Список объектов XAML
-        family
-        name
-        lastname
-        datapic
-        adressPropiska
-        adressFact
-        familyStatus
-        category
-        children
-        socialStatus
-        snils
-        statusProsto
-        serial
-        number
-         */
+
+        //Добавить призывника в базу
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            /*
+             Список объектов XAML
+            family
+            name
+            lastname
+            datapic
+            adressPropiska
+            adressFact
+            familyStatus
+            category
+            children
+            socialStatus
+            snils
+            statusProsto
+            serial
+            number
+             */
+
+            //Проверка на пустые поля
+            var listObjPersonData = new List<string>() 
+            {
+                family.Text, 
+                name.Text, 
+                lastname.Text, 
+                datapic.Text, 
+                adressPropiska.Text, 
+                adressFact.Text, 
+                familyStatus.Text, 
+                category.Text, 
+                children.Text, 
+                socialStatus.Text,
+                snils.Text,
+                statusProsto.Text,
+                serial.Text,
+                number.Text
+            };
+
+            foreach (var item in listObjPersonData)
+            {
+                if(string.IsNullOrEmpty(item))
+                {
+                    MessageBox.Show("Вы пропустили одно или несколько полей", "Незаполненное поле");
+                }
+            }
+
+            
+
+
+
+
+
+
+
+
+
+        }
+
+
+
+
+
 
 
 
