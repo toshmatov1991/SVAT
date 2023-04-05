@@ -94,7 +94,7 @@
                     Height="49" 
                     Width="121" 
                     Margin="0,44,0,0"
-                    Background="AliceBlue"/>
+                    Background="AliceBlue" Click="Button_Click"/>
 
         </Grid>
     </Border>
