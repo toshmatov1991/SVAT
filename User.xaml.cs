@@ -92,11 +92,5 @@ namespace Soliders
                 return strId;
             }
         }
-
-
-
-
-
-
     }
 }

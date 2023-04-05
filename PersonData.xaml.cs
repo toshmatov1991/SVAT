@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Soliders.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,7 @@ namespace Soliders
 {
     public partial class PersonData : Window
     {
-        private int idPersonData = 0;
+        private int idWorkPersonData = 0;
         public PersonData()
         {
             InitializeComponent();
@@ -25,7 +26,7 @@ namespace Soliders
         public PersonData(int idPerson)
         {
             InitializeComponent();
-            idPersonData = idPerson;
+            idWorkPersonData = idPerson;
         }
 
 
@@ -95,11 +96,15 @@ namespace Soliders
                     && IntTrue(serial.Text) 
                     && IntTrue(number.Text))
                 {
-                    MessageBox.Show("Молодец");
+                    //Добавляю в БД запись о призывнике
+                    using (PrContext db = new())
+                    {
+
+                    }
                 }
 
                 else
-                    MessageBox.Show("Что то не так");
+                    MessageBox.Show("Некорректно заполнено одно из полей");
             }
 
 
