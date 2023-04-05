@@ -23,5 +23,14 @@ namespace Soliders
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //Добавить сотрудника военкомата
+
+
+
+
+        }
     }
 }

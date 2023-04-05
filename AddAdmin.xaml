@@ -58,7 +58,7 @@
                    VerticalContentAlignment="Center"
                    Margin="17,34,198,36" Height="26"/>
             <TextBlock Text="Логин"
-                       VerticalAlignment="Top"
+                   VerticalAlignment="Top"
                    FontSize="20"
                    Grid.Row="4"
                    Margin="15 0 0 0"/>
@@ -68,7 +68,7 @@
                    VerticalContentAlignment="Center"
                    Margin="17,34,198,36" Height="26"/>
             <TextBlock Text="Пароль"
-                       VerticalAlignment="Top"
+                   VerticalAlignment="Top"
                    FontSize="20"
                    Grid.Row="5"
                    Margin="15 0 0 0"/>
@@ -78,15 +78,23 @@
                    VerticalContentAlignment="Center"
                    Margin="17,34,198,36" Height="26"/>
             <TextBlock Text="Права администратора"
-                       VerticalAlignment="Top"
+                   VerticalAlignment="Top"
                    FontSize="20"
                    Grid.Row="6"
-                       HorizontalAlignment="Left"
+                   HorizontalAlignment="Left"
                    Margin="15 0 0 0"/>
             <CheckBox   FontSize="17"
                    Name="adminOrNot"
                    Grid.Row="6"
                    VerticalAlignment="Top" Margin="247,9,133,0" Height="17"/>
+            <Button Content="Добавить"
+                    Grid.Row="6" 
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top" 
+                    Height="49" 
+                    Width="121" 
+                    Margin="0,44,0,0"
+                    Background="AliceBlue"/>
 
         </Grid>
     </Border>
