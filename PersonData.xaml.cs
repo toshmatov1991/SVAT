@@ -28,6 +28,27 @@ namespace Soliders
             idPersonData = idPerson;
         }
 
+        /*
+         Список объектов XAML
+        family
+        name
+        lastname
+        datapic
+        adressPropiska
+        adressFact
+        familyStatus
+        category
+        children
+        socialStatus
+        snils
+        statusProsto
+        serial
+        number
+         */
+
+
+
+
 
 
 

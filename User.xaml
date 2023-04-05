@@ -40,6 +40,8 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Добавить" Grid.Row="5" Grid.ColumnSpan="2" VerticalAlignment="Center" Width="120" Height="55" Background="AliceBlue" Click="Button_Click" />
+        <Button Grid.Row="5" Grid.ColumnSpan="2" VerticalAlignment="Center" Width="120" Height="55" Background="AliceBlue" Click="Button_Click">
+            <TextBlock FontSize="18" TextAlignment="Center">Добавить <LineBreak/>призывника</TextBlock>
+        </Button>
     </Grid>
 </Window>

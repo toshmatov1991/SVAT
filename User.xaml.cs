@@ -64,7 +64,8 @@ namespace Soliders
         /*Добавить новую запись(призывника, физическое лицо)*/
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            PersonData person = new();
+            person.ShowDialog();
         }
 
 
