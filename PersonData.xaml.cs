@@ -70,24 +70,69 @@ namespace Soliders
                 number.Text
             };
 
+            bool CheckIsNull = false;
+
             foreach (var item in listObjPersonData)
             {
                 if(string.IsNullOrEmpty(item))
                 {
-                    MessageBox.Show("Вы пропустили одно или несколько полей", "Незаполненное поле");
+                    CheckIsNull = true; 
                 }
             }
 
-            
+            if(CheckIsNull)
+            {
+                MessageBox.Show("Вы пропустили одно или несколько полей", "Внимательно");
+            }
+
+            else
+            {
+                if(StrTrue(family.Text) 
+                    && StrTrue(name.Text) 
+                    && StrTrue(lastname.Text) 
+                    && StrTrue(socialStatus.Text) 
+                    && IntTrue(children.Text) 
+                    && IntTrue(serial.Text) 
+                    && IntTrue(number.Text))
+                {
+                    MessageBox.Show("Молодец");
+                }
+
+                else
+                    MessageBox.Show("Что то не так");
+            }
 
 
+            static bool IntTrue(string str)
+            {
+                int j = 0;
+                for (int i = 0; i < str.Length; i++)
+                {
+                    if (!char.IsDigit(str[i]))
+                        j++;
+                }
+
+                if (j == 0)
+                    return true;
+                else
+                    return false;
+            }
 
 
+            static bool StrTrue(string str)
+            {
+                int j = 0;
+                for (int i = 0; i < str.Length; i++)
+                {
+                    if (!char.IsLetter(str[i]))
+                        j++;
+                }
 
-
-
-
-
+                if (j == 0)
+                    return true;
+                else
+                    return false;
+            }
         }
 
 
