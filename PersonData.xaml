@@ -186,7 +186,7 @@
                    Grid.RowSpan="2"
                    Margin="15 0 0 0"/>
             <TextBox   FontSize="17"
-                        Name="snils"
+                   Name="snils"
                    Grid.Row="7"
                    VerticalAlignment="Bottom"
                    VerticalContentAlignment="Center"
@@ -204,7 +204,7 @@
                    Grid.RowSpan="2"
                    Margin="15 0 0 0"/>
             <TextBox   FontSize="17"
-                        Name="serial"
+                   Name="serial"
                    Grid.Row="8"
                    VerticalAlignment="Bottom"
                    VerticalContentAlignment="Center"
@@ -217,7 +217,7 @@
                    Grid.RowSpan="2"
                    Margin="15 0 0 0"/>
             <TextBox   FontSize="17"
-                        Name="number"
+                   Name="number"
                    Grid.Row="8"
                    Grid.Column="1"
                    VerticalAlignment="Bottom"
@@ -231,7 +231,7 @@
                    VerticalAlignment="Top"
                    Margin="15 0 0 0"/>
             <ComboBox  FontSize="17"
-                        Name="statusProsto"
+                   Name="statusProsto"
                    SelectedIndex="0" 
                    Grid.Row="7"
                    Grid.Column="1"
