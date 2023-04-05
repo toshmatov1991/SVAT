@@ -25,7 +25,7 @@ namespace Soliders
             ListConscripts();
         }
 
-        public User(string iduser)
+        public User(int idUs, string iduser, int idAdmin)
         {
             InitializeComponent();
             Title = iduser;

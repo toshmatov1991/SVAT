@@ -68,7 +68,7 @@ namespace Soliders
                         if(polzovatel.Text == item.Login && password_user.Password == item.Pass)
                         {
                             stage= true;
-                            User user = new($"{item.Firstname} {item.Name} {item.Lastname}");
+                            User user = new(Convert.ToInt32(item.Id), $"{item.Firstname} {item.Name} {item.Lastname}", Convert.ToInt32(item.Admin));
                             user.Show();
                             Close();
                         }
