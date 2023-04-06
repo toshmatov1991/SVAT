@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" Icon="Resources/ar1.png" WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d" Icon="Resources/ar1.png" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
         Title="Администрирование" Height="700" Width="410">
     <Border Padding="5">
         <Grid>
@@ -26,7 +26,7 @@
                    Margin="15"
                    />
             <TextBlock Text="Фамилия"
-                   FontSize="20"
+                   FontSize="18"
                    Grid.Row="1"
                    VerticalAlignment="Top"
                    Margin="15 0 0 0"/>
@@ -34,9 +34,9 @@
                    Name="family"
                    Grid.Row="1"
                    VerticalContentAlignment="Center"
-                   Margin="15,33,222,36"/>
+                   Margin="15,33,222,36" Height="NaN"/>
             <TextBlock Text="Имя"
-                   FontSize="20"
+                   FontSize="18"
                    Grid.Row="2"
                    Grid.Column="1"
                    VerticalAlignment="Top"
@@ -48,15 +48,14 @@
                    VerticalContentAlignment="Center"
                    Margin="17,0,222,36" Height="27"/>
             <TextBlock Text="Отчество"
-                       VerticalAlignment="Top"
-                   FontSize="20"
+                   FontSize="18"
                    Grid.Row="3"
-                   Margin="15 0 0 0"/>
+                   Margin="15,0,0,73" Height="NaN"/>
             <TextBox   FontSize="17"
                    Name="lastname"
                    Grid.Row="3"
                    VerticalContentAlignment="Center"
-                   Margin="17,34,198,36" Height="26"/>
+                   Margin="17,34,222,36" Width="NaN" Height="NaN"/>
             <TextBlock Text="Логин"
                    VerticalAlignment="Top"
                    FontSize="20"
@@ -66,7 +65,7 @@
                    Name="login"
                    Grid.Row="4"
                    VerticalContentAlignment="Center"
-                   Margin="17,34,198,36" Height="26"/>
+                   Margin="17,34,222,36" Width="NaN" Height="NaN"/>
             <TextBlock Text="Пароль"
                    VerticalAlignment="Top"
                    FontSize="20"
@@ -76,17 +75,18 @@
                    Name="password"
                    Grid.Row="5"
                    VerticalContentAlignment="Center"
-                   Margin="17,34,198,36" Height="26"/>
+                   Margin="17,35,222,34" Width="NaN" Height="NaN"/>
             <TextBlock Text="Права администратора"
                    VerticalAlignment="Top"
                    FontSize="20"
                    Grid.Row="6"
                    HorizontalAlignment="Left"
-                   Margin="15 0 0 0"/>
+                   Margin="15,0,0,0"/>
             <CheckBox   FontSize="17"
                    Name="adminOrNot"
                    Grid.Row="6"
-                   VerticalAlignment="Top" Margin="247,9,133,0" Height="17"/>
+                   VerticalAlignment="Top"
+                        HorizontalAlignment="Left" Margin="242,10,0,0" Width="18" Height="16"/>
             <Button Content="Добавить"
                     Grid.Row="6" 
                     HorizontalAlignment="Center"

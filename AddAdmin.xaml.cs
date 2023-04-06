@@ -60,7 +60,7 @@ namespace Soliders
                     //Делаю запрос в БД
                     using (PrContext db = new())
                     {
-                        var users = db.Works.FromSqlRaw("SELECT login FROM Works").ToList();
+                        var users = db.Works.FromSqlRaw("SELECT * FROM Works").ToList();
                         int y = 0;
                         foreach (var item in users)
                         {
@@ -80,6 +80,7 @@ namespace Soliders
                             {
                                 db.Database.ExecuteSqlRaw("INSERT INTO Works(firstname, name, lastname, pass, login, admin) VALUES({0}, {1}, {2}, {3}, {4}, {5})", family.Text, name.Text, lastname.Text, login.Text, password.Text, Convert.ToInt64(t));
                                 MessageBox.Show("Новый пользователь успешно добавлен!");
+                                Close();
                             }
                             catch (Exception ex)
                             {
