@@ -92,5 +92,12 @@ namespace Soliders
                 return strId;
             }
         }
+
+        /*Добавить новую запись(сотудника, физическое лицо)*/
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            AddAdmin addAdmin = new();
+            addAdmin.ShowDialog();
+        }
     }
 }
