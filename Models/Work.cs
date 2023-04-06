@@ -19,5 +19,7 @@ public partial class Work
 
     public long Admin { get; set; }
 
+    public long Block { get; set; }
+
     public virtual ICollection<Commission> Commissions { get; } = new List<Commission>();
 }

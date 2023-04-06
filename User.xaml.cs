@@ -99,5 +99,14 @@ namespace Soliders
             AddAdmin addAdmin = new();
             addAdmin.ShowDialog();
         }
+
+
+
+        /*Список сотрудников(администрирование)*/
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            ListPersonWorks listPersonWorks = new ListPersonWorks();
+            listPersonWorks.ShowDialog();
+        }
     }
 }

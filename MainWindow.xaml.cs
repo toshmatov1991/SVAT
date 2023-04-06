@@ -25,10 +25,8 @@ namespace Soliders
             Start();
             //PersonData person = new();
             //person.Show();
-            AddAdmin addAdmin = new AddAdmin();
-            addAdmin.Show();
-            //User user = new();
-            //user.Show();
+            User user = new();
+            user.Show();
             Close();
         }
 
