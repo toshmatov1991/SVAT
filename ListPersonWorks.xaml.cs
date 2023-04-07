@@ -20,6 +20,7 @@ namespace Soliders
         public ListPersonWorks()
         {
             InitializeComponent();
+            ListWorks();
         }
 
         /*Изменить данные*/
@@ -35,13 +36,16 @@ namespace Soliders
             block 
              */
 
+        }
+
+        private void ListWorks()
+        {
             using (PrContext db = new())
             {
-                var ListWorks = db.Works.ToList();
-
-
-
+                var listWorks = db.Works.ToList();
+                listviewUsers.ItemsSource = listWorks;
             }
         }
+
     }
 }
