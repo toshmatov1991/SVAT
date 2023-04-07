@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Soliders.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,28 @@ namespace Soliders
         public ListPersonWorks()
         {
             InitializeComponent();
+        }
+
+        /*Изменить данные*/
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            /*Объекты XAML
+            family
+            name
+            lastname
+            login
+            password
+            administratorRights
+            block 
+             */
+
+            using (PrContext db = new())
+            {
+                var ListWorks = db.Works.ToList();
+
+
+
+            }
         }
     }
 }
