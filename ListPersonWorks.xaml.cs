@@ -14,9 +14,6 @@ using System.Windows.Shapes;
 
 namespace Soliders
 {
-    /// <summary>
-    /// Логика взаимодействия для ListPersonWorks.xaml
-    /// </summary>
     public partial class ListPersonWorks : Window
     {
         public ListPersonWorks()

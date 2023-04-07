@@ -4,8 +4,81 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Администрирование" Height="450" Width="700">
-    <Grid>
-        
-    </Grid>
+        Title="Администрирование" Height="750" Width="430">
+    <Border Padding="10">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Пользователи информационной системы" 
+                   Grid.ColumnSpan="6"
+                   VerticalAlignment="Top"
+                   FontSize="20" Margin="0,23,0,0"/>
+            <ListView x:Name="listviewUsers" HorizontalAlignment="Left" Grid.ColumnSpan="6" Grid.RowSpan="2" SelectionMode="Extended" IsSynchronizedWithCurrentItem="True" Margin="0,72,0,0">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Firstname, Mode=OneWay}" Header="Фамилия" Width="80"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Name, Mode=OneWay}" Header="Имя" Width="80"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Lastname, Mode=OneWay}" Header="Отчество" Width="80"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=DateOfBirth, Mode=OneWay}" Header="Логин" Width="80"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Category, Mode=OneWay}" Header="Пароль" Width="80"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <TextBlock Text="Фамилия"
+                       Grid.Row="2"
+                       VerticalAlignment="Top"
+                       Grid.ColumnSpan="2"
+                       HorizontalAlignment="Left"
+                       Margin="0,10,34,0"
+                       FontSize="17"/>
+            <TextBox   Grid.Row="2"
+                       Grid.Column="1"
+                       VerticalAlignment="Top"
+                       Grid.ColumnSpan="3"
+                       Margin="18,10,50,0"
+                       FontSize="17"/>
+            <TextBlock Text="Имя"
+                       Grid.Row="2"
+                       VerticalAlignment="Center"
+                       Grid.ColumnSpan="2"
+                       HorizontalAlignment="Left"
+                       Margin="0,10,34,0"
+                       FontSize="17"/>
+            <TextBox   Grid.Row="2"
+                       Grid.Column="1"
+                       VerticalAlignment="Center"
+                       Grid.ColumnSpan="3"
+                       Margin="18,10,50,0"
+                       FontSize="17"/>
+            <TextBlock Text="Отчество"
+                       Grid.Row="2"
+                       VerticalAlignment="Bottom"
+                       Grid.ColumnSpan="2"
+                       HorizontalAlignment="Left"
+                       Margin="0,10,34,0"
+                       FontSize="17"/>
+            <TextBox   Grid.Row="2"
+                       Grid.Column="1"
+                       VerticalAlignment="Bottom"
+                       Grid.ColumnSpan="3"
+                       Margin="18,10,50,0"
+                       FontSize="17"/>
+
+
+        </Grid>
+    </Border>
 </Window>
