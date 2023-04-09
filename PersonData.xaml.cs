@@ -1,4 +1,5 @@
-﻿using Soliders.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Soliders.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -99,6 +100,8 @@ namespace Soliders
                     //Добавляю в БД запись о призывнике
                     using (PrContext db = new())
                     {
+                        int lastIdConscript = db.Conscripts.Count() + 1;
+                        db.Database.ExecuteSqlRaw("INSERT INTO Commission(works_fk, conscript_fk) VALUES({0}, {1})", MainWindow.IdWorks, lastIdConscript);
 
                     }
                 }
