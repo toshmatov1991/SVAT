@@ -104,8 +104,7 @@ namespace Soliders
                         //Добавляю в БД запись о призывнике
                         using (PrContext db = new())
                         {
-                            int lastIdConscript = db.Conscripts.Count() + 1;
-                            db.Database.ExecuteSqlRaw("INSERT INTO Commission(works_fk, conscript_fk) VALUES({0}, {1})", MainWindow.IdWorks, lastIdConscript);
+                           
                             Conscript conscript = new()
                             {
                                 Firstname = family.Text,
@@ -124,6 +123,7 @@ namespace Soliders
                             };
                             db.Conscripts.Add(conscript);
                             db.SaveChanges();
+                            db.Database.ExecuteSqlRaw("INSERT INTO Commission(works_fk, conscript_fk) VALUES({0}, {1})", 1 /*Convert.ToInt64(MainWindow.IdWorks)*/, Convert.ToInt64(db.Conscripts.Count()));
                         }
                         MessageBox.Show("Призывник добавлен!");
                     }
