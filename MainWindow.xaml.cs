@@ -66,11 +66,17 @@ namespace Soliders
                     bool stage = false;
                     foreach (var item in getmyworks)
                     {
-                        if(polzovatel.Text == item.Login && password_user.Password == item.Pass)
+                        if(polzovatel.Text == item.Login && password_user.Password == item.Pass && item.Block == 1)
                         {
                             stage= true;
+                            MessageBox.Show("Ваш аккаунт заблокирован");
+                            break;
+                        }
+                        else if (polzovatel.Text == item.Login && password_user.Password == item.Pass && item.Block == 0)
+                        {
+                            stage = true;
                             IdWorks = Convert.ToInt32(item.Id);
-                            User user = new(Convert.ToInt32(item.Id), $"{item.Firstname} {item.Name} {item.Lastname}", Convert.ToInt32(item.Admin));
+                            User user = new($"{item.Firstname} {item.Name} {item.Lastname}", Convert.ToInt32(item.Admin));
                             user.Show();
                             Close();
                         }
