@@ -55,8 +55,23 @@ namespace Soliders
         {
             using (PrContext db = new())
             {
-                var listWorks = db.Works.ToList();
-                listviewUsers.ItemsSource = listWorks;
+                var listWorks = from p in db.Works
+                                select new
+                                {
+                                    p.Id,
+                                    name = p.Name,
+                                    lastname = p.Lastname,
+                                    firstname = p.Firstname,
+                                    login = p.Login,
+                                    pass = p.Pass
+                                };
+                listviewUsers.ItemsSource = listWorks.ToList();
+
+
+
+
+
+
 
                 var getMyWorks = db.Works.FirstOrDefault();
 
@@ -72,6 +87,32 @@ namespace Soliders
                     block.IsChecked = true;
                 else block.IsChecked = false;
             }
+        }
+
+
+        //Выбор пользователя при двойном клике
+        private void ChoiceOfOnePerson(object sender, MouseButtonEventArgs e)
+        {
+            var strId = listviewUsers.SelectedItem.ToString();
+            MessageBox.Show(strId);
+
+
+            //using(PrContext db = new())
+            //{
+            //    var getMyWorks = db.Works.FirstOrDefault();
+
+            //    family.Text = getMyWorks.Firstname;
+            //    name.Text = getMyWorks.Name;
+            //    lastname.Text = getMyWorks.Lastname;
+            //    login.Text = getMyWorks.Login;
+            //    password.Text = getMyWorks.Pass;
+            //    if (getMyWorks.Admin == 1)
+            //        administratorRights.IsChecked = true;
+            //    else administratorRights.IsChecked = false;
+            //    if (getMyWorks.Block == 1)
+            //        block.IsChecked = true;
+            //    else block.IsChecked = false;
+            //}
         }
     }
 }

@@ -27,14 +27,14 @@
                    Grid.ColumnSpan="6"
                    VerticalAlignment="Top"
                    FontSize="20" Margin="0,23,0,0"/>
-            <ListView x:Name="listviewUsers" HorizontalAlignment="Left" Grid.ColumnSpan="6" Grid.RowSpan="2" SelectionMode="Extended" IsSynchronizedWithCurrentItem="True" Margin="0,72,0,0">
+            <ListView x:Name="listviewUsers" HorizontalAlignment="Left" Grid.ColumnSpan="6" Grid.RowSpan="2" SelectionMode="Extended" IsSynchronizedWithCurrentItem="True" Margin="0,72,0,0" MouseDoubleClick="ChoiceOfOnePerson">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=Firstname, Mode=OneWay}" Header="Фамилия" Width="80"/>
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=Name, Mode=OneWay}" Header="Имя" Width="80"/>
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=Lastname, Mode=OneWay}" Header="Отчество" Width="80"/>
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=Login, Mode=OneWay}" Header="Логин" Width="70"/>
-                        <GridViewColumn DisplayMemberBinding="{Binding Path=Pass, Mode=OneWay}" Header="Пароль" Width="70"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=firstname, Mode=OneWay}" Header="Фамилия" Width="80"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=name, Mode=OneWay}" Header="Имя" Width="80"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=lastname, Mode=OneWay}" Header="Отчество" Width="80"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=login, Mode=OneWay}" Header="Логин" Width="70"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=pass, Mode=OneWay}" Header="Пароль" Width="70"/>
                     </GridView>
                 </ListView.View>
             </ListView>
