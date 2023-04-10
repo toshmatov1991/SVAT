@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using iText.Kernel.XMP.Impl;
+using Microsoft.EntityFrameworkCore;
 using Soliders.Models;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Soliders
 {
@@ -97,13 +99,39 @@ namespace Soliders
                     && IntTrue(serial.Text) 
                     && IntTrue(number.Text))
                 {
-                    //Добавляю в БД запись о призывнике
-                    using (PrContext db = new())
+                    try
                     {
-                        int lastIdConscript = db.Conscripts.Count() + 1;
-                        db.Database.ExecuteSqlRaw("INSERT INTO Commission(works_fk, conscript_fk) VALUES({0}, {1})", MainWindow.IdWorks, lastIdConscript);
-
+                        //Добавляю в БД запись о призывнике
+                        using (PrContext db = new())
+                        {
+                            int lastIdConscript = db.Conscripts.Count() + 1;
+                            db.Database.ExecuteSqlRaw("INSERT INTO Commission(works_fk, conscript_fk) VALUES({0}, {1})", MainWindow.IdWorks, lastIdConscript);
+                            Conscript conscript = new()
+                            {
+                                Firstname = family.Text,
+                                Lastname = lastname.Text,
+                                Name = name.Text,
+                                Dateof = datapic.Text,
+                                Address = adressPropiska.Text,
+                                AddressNext = adressFact.Text,
+                                FamilyStatus = familyStatus.Text,
+                                Category = category.Text,
+                                Children = Convert.ToInt64(children.Text),
+                                SocialStatus = socialStatus.Text,
+                                Snils = snils.Text,
+                                Passport = serial.Text + " " + number.Text,
+                                Status = statusProsto.Text
+                            };
+                            db.Conscripts.Add(conscript);
+                            db.SaveChanges();
+                        }
+                        MessageBox.Show("Призывник добавлен!");
                     }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                  
                 }
 
                 else
