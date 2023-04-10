@@ -88,26 +88,39 @@ namespace Soliders
         //Выбор пользователя при двойном клике
         private void ChoiceOfOnePerson(object sender, MouseButtonEventArgs e)
         {
-            var strId = listviewUsers.SelectedItem.ToString();
-            MessageBox.Show(strId);
+            var strId = ReturnIdPerson(listviewUsers.SelectedItem.ToString());
+            
+            using (PrContext db = new())
+            {
+                var getMyWorks = db.Works.Where(u => u.Id == strId).FirstOrDefault();
 
+                family.Text = getMyWorks.Firstname;
+                name.Text = getMyWorks.Name;
+                lastname.Text = getMyWorks.Lastname;
+                login.Text = getMyWorks.Login;
+                password.Text = getMyWorks.Pass;
+                if (getMyWorks.Admin == 1)
+                    administratorRights.IsChecked = true;
+                else administratorRights.IsChecked = false;
+                if (getMyWorks.Block == 1)
+                    block.IsChecked = true;
+                else block.IsChecked = false;
+            }
 
-            //using(PrContext db = new())
-            //{
-            //    var getMyWorks = db.Works.FirstOrDefault();
+            static long ReturnIdPerson(string str)
+            {
+                string a = ""; 
 
-            //    family.Text = getMyWorks.Firstname;
-            //    name.Text = getMyWorks.Name;
-            //    lastname.Text = getMyWorks.Lastname;
-            //    login.Text = getMyWorks.Login;
-            //    password.Text = getMyWorks.Pass;
-            //    if (getMyWorks.Admin == 1)
-            //        administratorRights.IsChecked = true;
-            //    else administratorRights.IsChecked = false;
-            //    if (getMyWorks.Block == 1)
-            //        block.IsChecked = true;
-            //    else block.IsChecked = false;
-            //}
+                for (int i = 0; i < str.Length; i++)
+                {
+                    if (char.IsDigit(str[i]))
+                        a += str[i];
+                    else if (str[i] == ',')
+                        break;
+                }
+
+                return Convert.ToInt64(a);
+            }
         }
     }
 }
