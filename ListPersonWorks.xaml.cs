@@ -37,12 +37,13 @@ namespace Soliders
                     getMyRabs.Lastname = lastname.Text;
                     getMyRabs.Login = login.Text;
                     getMyRabs.Pass = password.Text;
-                    if (administratorRights.IsChecked == true)
+                    if ((bool)administratorRights.IsChecked)
                         getMyRabs.Admin = 1;
                     else getMyRabs.Admin = 0;
-                    if (block.IsChecked == true)
+                    if ((bool)block.IsChecked)
                         getMyRabs.Block = 1;
                     else getMyRabs.Block = 0;
+                    db.SaveChanges();
                     MessageBox.Show("Обновлено");
                 }
                 else
@@ -93,7 +94,7 @@ namespace Soliders
             using (PrContext db = new())
             {
                 var getMyWorks = db.Works.Where(u => u.Id == strId).FirstOrDefault();
-
+                idPerson = (int)strId;
                 family.Text = getMyWorks.Firstname;
                 name.Text = getMyWorks.Name;
                 lastname.Text = getMyWorks.Lastname;
