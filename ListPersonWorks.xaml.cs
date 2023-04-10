@@ -27,30 +27,27 @@ namespace Soliders
         /*Изменить данные*/
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            /*Объекты XAML
-            family
-            name
-            lastname
-            login
-            password
-            administratorRights
-            block 
-             */
-
             using(PrContext db = new())
             {
                 var getMyRabs = db.Works.Where(u => u.Id == idPerson).FirstOrDefault();
                 if (getMyRabs != null)
                 {
-
+                    getMyRabs.Firstname = family.Text;
+                    getMyRabs.Name = name.Text;
+                    getMyRabs.Lastname = lastname.Text;
+                    getMyRabs.Login = login.Text;
+                    getMyRabs.Pass = password.Text;
+                    if (administratorRights.IsChecked == true)
+                        getMyRabs.Admin = 1;
+                    else getMyRabs.Admin = 0;
+                    if (block.IsChecked == true)
+                        getMyRabs.Block = 1;
+                    else getMyRabs.Block = 0;
+                    MessageBox.Show("Обновлено");
                 }
                 else
                     MessageBox.Show("Что то пошло не так, мдаа......");
             }
-
-
-
-
         }
 
         //Метод для заполнения списка пользователей
@@ -76,6 +73,5 @@ namespace Soliders
                 else block.IsChecked = false;
             }
         }
-
     }
 }
