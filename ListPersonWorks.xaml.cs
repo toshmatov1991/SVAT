@@ -17,6 +17,7 @@ namespace Soliders
 {
     public partial class ListPersonWorks : Window
     {
+        private static int idPerson = 1;
         public ListPersonWorks()
         {
             InitializeComponent();
@@ -36,14 +37,43 @@ namespace Soliders
             block 
              */
 
+            using(PrContext db = new())
+            {
+                var getMyRabs = db.Works.Where(u => u.Id == idPerson).FirstOrDefault();
+                if (getMyRabs != null)
+                {
+
+                }
+                else
+                    MessageBox.Show("Что то пошло не так, мдаа......");
+            }
+
+
+
+
         }
 
+        //Метод для заполнения списка пользователей
         private void ListWorks()
         {
             using (PrContext db = new())
             {
                 var listWorks = db.Works.ToList();
                 listviewUsers.ItemsSource = listWorks;
+
+                var getMyWorks = db.Works.FirstOrDefault();
+
+                family.Text = getMyWorks.Firstname;
+                name.Text = getMyWorks.Name;
+                lastname.Text = getMyWorks.Lastname;
+                login.Text = getMyWorks.Login;
+                password.Text = getMyWorks.Pass;
+                if (getMyWorks.Admin == 1)
+                    administratorRights.IsChecked = true;
+                else administratorRights.IsChecked = false;
+                if (getMyWorks.Block == 1)
+                    block.IsChecked = true;
+                else block.IsChecked = false;
             }
         }
 
