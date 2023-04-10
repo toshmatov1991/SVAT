@@ -68,11 +68,6 @@ namespace Soliders
                 listviewUsers.ItemsSource = listWorks.ToList();
 
 
-
-
-
-
-
                 var getMyWorks = db.Works.FirstOrDefault();
 
                 family.Text = getMyWorks.Firstname;
