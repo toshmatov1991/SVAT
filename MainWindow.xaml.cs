@@ -20,6 +20,8 @@ namespace Soliders
     public partial class MainWindow : Window
     {
         public static int IdWorks = 0;
+        public static int AdminOrNotAdmin = 0;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -74,6 +76,8 @@ namespace Soliders
                         }
                         else if (polzovatel.Text == item.Login && password_user.Password == item.Pass && item.Block == 0)
                         {
+                            if (item.Admin == 1)
+                                AdminOrNotAdmin = 1;
                             stage = true;
                             IdWorks = Convert.ToInt32(item.Id);
                             User user = new($"{item.Firstname} {item.Name} {item.Lastname}", Convert.ToInt32(item.Admin));

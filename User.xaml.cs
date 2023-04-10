@@ -23,6 +23,7 @@ namespace Soliders
         {
             InitializeComponent();
             ListConscripts();
+            AdminOrNotAdmin();
         }
 
         public User(string iduser, int idAdmin)
@@ -30,6 +31,7 @@ namespace Soliders
             InitializeComponent();
             Title = iduser;
             ListConscripts();
+            AdminOrNotAdmin();
         }
 
         private void ListConscripts()
@@ -108,5 +110,23 @@ namespace Soliders
             ListPersonWorks listPersonWorks = new ListPersonWorks();
             listPersonWorks.ShowDialog();
         }
+
+
+        private void AdminOrNotAdmin()
+        {
+            if(MainWindow.AdminOrNotAdmin == 1)
+            {
+                AddPerson.Visibility = Visibility.Visible;
+                ListPerson.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                AddPerson.Visibility = Visibility.Hidden;
+                ListPerson.Visibility = Visibility.Hidden;
+            }
+                
+        }
+
+
     }
 }
