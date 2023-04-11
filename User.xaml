@@ -24,7 +24,7 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <TextBlock Text="Поиск" Grid.Column="2" VerticalAlignment="Center" Margin="25" FontSize="23"/>
-        <TextBox Grid.ColumnSpan="3" FontSize="15" Grid.Column="2" VerticalAlignment="Center" Height="25" Width="270" VerticalContentAlignment="Center" KeyUp="FaceSearch"/>
+        <TextBox x:Name="Search" Grid.ColumnSpan="3" FontSize="15" Grid.Column="2" VerticalAlignment="Center" Height="25" Width="270" VerticalContentAlignment="Center" KeyUp="FaceSearch"/>
         <ListView x:Name="listviewUsers" HorizontalAlignment="Stretch" Grid.ColumnSpan="6" Grid.RowSpan="4" Grid.Row="1"
                   Margin="25 0 0 0" VerticalAlignment="Stretch" SelectionMode="Extended" IsSynchronizedWithCurrentItem="True" MouseDoubleClick="MoreAboutThePerson">
             <ListView.View>

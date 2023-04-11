@@ -59,6 +59,27 @@ namespace Soliders
         /*Поиск призывников*/
         private void FaceSearch(object sender, KeyEventArgs e)
         {
+            string str = Search.Text.ToLower();
+            using (PrContext db = new())
+            {
+                var listConscripts = from conscript in db.Conscripts.ToList()
+                                     where conscript.Firstname.ToLower().Contains(str)
+                                        || conscript.Name.ToLower().Contains(str)
+                                        || conscript.Lastname.ToLower().Contains(str)
+                                     select new
+                                     {
+                                         conscript.Id,
+                                         Firstname = conscript.Firstname,
+                                         Lastname = conscript.Lastname,
+                                         Name = conscript.Name,
+                                         DateOfBirth = conscript.Dateof,
+                                         Category = conscript.Category,
+                                         Passport = conscript.Passport,
+                                         Snils = conscript.Snils,
+                                         Status = conscript.Status
+                                     };
+                listviewUsers.ItemsSource = listConscripts;
+            }
 
         }
 
@@ -102,15 +123,12 @@ namespace Soliders
             addAdmin.ShowDialog();
         }
 
-
-
         /*Список сотрудников(администрирование)*/
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             ListPersonWorks listPersonWorks = new ListPersonWorks();
             listPersonWorks.ShowDialog();
         }
-
 
         private void AdminOrNotAdmin()
         {
