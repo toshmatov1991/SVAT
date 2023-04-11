@@ -25,11 +25,12 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <TextBlock Text="Новый призывник"
-                   FontSize="30"
-                   Grid.ColumnSpan="2"
-                   VerticalAlignment="Center"
-                   Margin="15"/>
+            <TextBlock Text="Наша задача забрать каждого"
+                       VerticalAlignment="Center"
+                       Grid.ColumnSpan="2"
+                       FontSize="25"
+                       HorizontalAlignment="Center"
+                       Foreground="Blue"/>
             <TextBlock Text="Фамилия"
                    FontSize="20"
                    Grid.Row="1"
@@ -243,15 +244,24 @@
                 <TextBlock>Служит</TextBlock>
                 <TextBlock>Служил</TextBlock>
             </ComboBox>
-            <Button Content="Добавить"
+            <Button Content="Изменить"
                     Grid.Row="9"
-                    Width="140"
+                    Width="150"
                     FontSize="20"
                     Background="AliceBlue"
                     Grid.RowSpan="2"
-                    Height="50"
-                    Grid.ColumnSpan="2"
-                    HorizontalAlignment="Center" Click="Button_Click"/>
+                    Height="70"
+                    HorizontalAlignment="Center"/>
+            <Button Grid.Column="1"
+                    Grid.Row="9"
+                    Width="150"
+                    FontSize="20"
+                    Background="AliceBlue"
+                    Grid.RowSpan="2"
+                    Height="70"
+                    HorizontalAlignment="Center">
+                <TextBlock TextAlignment="Center">Сформировать<LineBreak/>повестку</TextBlock>
+            </Button>
         </Grid>
     </Border>
 </Window>
