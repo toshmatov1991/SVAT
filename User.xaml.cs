@@ -95,10 +95,10 @@ namespace Soliders
         /*Подробнее о персоне*/
         private void MoreAboutThePerson(object sender, MouseButtonEventArgs e)
         {
-            var str = listviewUsers.SelectedItem.ToString();
-            MessageBox.Show(ReturnIdThePerson(str));
-
-
+            var str = ReturnIdThePerson(listviewUsers.SelectedItem.ToString());
+      
+            MorePerson more = new(Convert.ToInt32(str));
+            more.ShowDialog();
 
 
 
