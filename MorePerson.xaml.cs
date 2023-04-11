@@ -66,10 +66,16 @@ namespace Soliders
             }
         }
 
+        //Изменить информацию о призывнике/физическом лице
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            
 
 
 
 
 
+
+        }
     }
 }
