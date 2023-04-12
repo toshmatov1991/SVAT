@@ -29,21 +29,6 @@ namespace Soliders
             PullUpPersona();
         }
 
-             /* family.Text, 
-                name.Text, 
-                lastname.Text, 
-                datapic.Text, 
-                adressPropiska.Text, 
-                adressFact.Text, 
-                familyStatus.Text, 
-                category.Text, 
-                children.Text, 
-                socialStatus.Text,
-                snils.Text,
-                statusProsto.Text,
-                serial.Text,
-                number.Text
-             */
 
         private void PullUpPersona()
         {
@@ -169,8 +154,6 @@ namespace Soliders
                 else
                     return false;
             }
-
-
             static bool StrTrue(string str)
             {
                 int j = 0;
@@ -185,8 +168,31 @@ namespace Soliders
                 else
                     return false;
             }
+        }
+
+        //Сформировать повестку
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            using(PrContext db = new())
+            {
+                var sluzhil = db.Conscripts.Where(u => u.Id == mestniyId).FirstOrDefault();
+                if (sluzhil.Status == "Служит")
+                    MessageBox.Show("Данный боец уже служит");
+
+                else if (sluzhil.Status == "Служил")
+                    MessageBox.Show("Данный боец уже служил");
+
+                else if (sluzhil.Status == "Не cлужил")
+                {
+                    //Формируем повестку
+
+                    return;
 
 
+                }
+
+
+            }
         }
     }
 }

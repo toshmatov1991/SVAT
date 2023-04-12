@@ -259,7 +259,7 @@
                     Background="AliceBlue"
                     Grid.RowSpan="2"
                     Height="70"
-                    HorizontalAlignment="Center">
+                    HorizontalAlignment="Center" Click="Button_Click_1">
                 <TextBlock TextAlignment="Center">Сформировать<LineBreak/>повестку</TextBlock>
             </Button>
         </Grid>
