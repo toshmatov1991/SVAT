@@ -221,18 +221,20 @@ namespace Soliders
                     PdfDocument pdfDoc = new(new PdfWriter(fileName));
                     Document doc = new(pdfDoc, iText.Kernel.Geom.PageSize.A4);
                     PdfFont f2 = PdfFontFactory.CreateFont(Arial2H(), "Identity-H");
-                 
-                    
-                    Cell cell2 = new Cell().Add(new Paragraph("Призывнику ")).SetFont(f2);
-                    cell2 = new Cell().Add(new Paragraph("Проживающему ")).SetFont(f2);
-                  
-                    Dispatcher.Invoke(() =>
-                    {
-                      
+                Cell cell = new();
+               Dispatcher.Invoke(() =>
+                {
+                    cell.Add(new Paragraph("Призывнику ")).SetFont(f2);
 
-                    });
+                });
+
+
+               
+                    
+                  
+                    
                    
-                    doc.Add(cell2);
+                    doc.Add(cell);
                     doc.Close();
                    
                     var proc = new Process();
