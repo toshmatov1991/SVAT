@@ -224,19 +224,25 @@ namespace Soliders
                 Cell cell = new();
                Dispatcher.Invoke(() =>
                 {
-                    cell.Add(new Paragraph("Призывнику ")).SetFont(f2);
+                    
+                    cell.Add(new Paragraph($"Призывнику: {family.Text} {name.Text} {lastname.Text}")).SetFont(f2);
 
+                    Cell cell1 = new Cell().Add(new Paragraph($"Проживающему по адресу: {adressPropiska.Text}")).SetFont(f2);
+
+                    Cell cell2 = new Cell()
+                                
+                                .Add(new Paragraph($"Повестка")).SetFont(f2).SetFontSize(30);
+                    Cell cell3 = new Cell().Add(new Paragraph($"")).SetFont(f2);
+                    Cell cell4 = new Cell().Add(new Paragraph($"")).SetFont(f2);
+
+                    doc.Add(cell);
+                    doc.Add(cell1);
+                    doc.Add(cell2);
+                    doc.Add(cell3);
+                    doc.Add(cell4);
+                    doc.Close();
                 });
 
-
-               
-                    
-                  
-                    
-                   
-                    doc.Add(cell);
-                    doc.Close();
-                   
                     var proc = new Process();
                     proc.StartInfo.FileName = fileName;
                     proc.StartInfo.UseShellExecute = true;

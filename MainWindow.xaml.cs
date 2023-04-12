@@ -28,9 +28,9 @@ namespace Soliders
             Start();
             //PersonData person = new();
             //person.Show();
-            //User user = new();
-            //user.Show();
-            //Close();
+            User user = new();
+            user.Show();
+            Close();
         }
 
         private void Start()
