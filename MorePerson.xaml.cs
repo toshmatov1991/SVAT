@@ -1,15 +1,25 @@
-﻿using iText.Kernel.XMP.Impl;
+﻿using iText.Kernel.Colors;
+using iText.Kernel.Font;
+using iText.Kernel.Pdf;
+using iText.Kernel.XMP.Impl;
+using iText.Layout;
+using iText.Layout.Borders;
+using iText.Layout.Element;
+using iText.Layout.Properties;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Win32;
 using Soliders.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -173,26 +183,75 @@ namespace Soliders
         //Сформировать повестку
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            string str = ""; 
+
             using(PrContext db = new())
             {
                 var sluzhil = db.Conscripts.Where(u => u.Id == mestniyId).FirstOrDefault();
-                if (sluzhil.Status == "Служит")
-                    MessageBox.Show("Данный боец уже служит");
+                str = sluzhil.Status;
+            }
 
-                else if (sluzhil.Status == "Служил")
-                    MessageBox.Show("Данный боец уже служил");
+            if (str == "Служит")
+                MessageBox.Show("Данный боец уже служит");
 
-                else if (sluzhil.Status == "Не cлужил")
-                {
-                    //Формируем повестку
+            else if (str == "Служил")
+                MessageBox.Show("Данный боец уже служил");
 
-                    return;
-
-
-                }
+            else if(str == "Не служил")   
+            {
+                Thread thread = new(FormingTheAgenda);
+                thread.Start();
 
 
             }
+
+
         }
+
+        //Формирование повестки
+        private void FormingTheAgenda()
+        {
+           
+                SaveFileDialog dialog = new SaveFileDialog();
+                dialog.Filter = "PDF document (*.pdf)|*.pdf";
+
+                if (dialog.ShowDialog() == true)
+                {
+                    string fileName = dialog.FileName;
+                    PdfDocument pdfDoc = new(new PdfWriter(fileName));
+                    Document doc = new(pdfDoc, iText.Kernel.Geom.PageSize.A4);
+                    PdfFont f2 = PdfFontFactory.CreateFont(Arial2H(), "Identity-H");
+                 
+                    
+                    Cell cell2 = new Cell().Add(new Paragraph("Призывнику ")).SetFont(f2);
+                    cell2 = new Cell().Add(new Paragraph("Проживающему ")).SetFont(f2);
+                  
+                    Dispatcher.Invoke(() =>
+                    {
+                      
+
+                    });
+                   
+                    doc.Add(cell2);
+                    doc.Close();
+                   
+                    var proc = new Process();
+                    proc.StartInfo.FileName = fileName;
+                    proc.StartInfo.UseShellExecute = true;
+                    proc.Start();
+                }
+           
+        }
+
+        //Относительный путь
+        static private string Arial2H()
+        {
+            var x = Directory.GetCurrentDirectory();
+            var y = Directory.GetParent(x).FullName;
+            var c = Directory.GetParent(y).FullName;
+            var r = Directory.GetParent(c).FullName + @"\DA\arial.ttf";
+            return r;
+        }
+
     }
 }
