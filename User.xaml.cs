@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -30,28 +31,38 @@ namespace Soliders
         {
             InitializeComponent();
             Title = iduser;
-            ListConscripts();
+            Thread thread = new(ListConscripts);
+            thread.Start();
             AdminOrNotAdmin();
         }
 
-        private void ListConscripts()
+        private async void ListConscripts()
         {
-            using(PrContext db = new())
+
+            while (true)
             {
-                var listConscripts = from conscript in db.Conscripts
-                                     select new
-                                     {
-                                         conscript.Id,
-                                         Firstname = conscript.Firstname,
-                                         Lastname = conscript.Lastname,
-                                         Name = conscript.Name,
-                                         DateOfBirth = conscript.Dateof,
-                                         Category = conscript.Category,
-                                         Passport = conscript.Passport,
-                                         Snils = conscript.Snils,
-                                         Status = conscript.Status
-                                     };
-                listviewUsers.ItemsSource = listConscripts.ToList();
+                using (PrContext db = new())
+                {
+
+                    Dispatcher.Invoke(() =>
+                    {
+                        var listConscripts = from conscript in db.Conscripts
+                                             select new
+                                             {
+                                                 conscript.Id,
+                                                 Firstname = conscript.Firstname,
+                                                 Lastname = conscript.Lastname,
+                                                 Name = conscript.Name,
+                                                 DateOfBirth = conscript.Dateof,
+                                                 Category = conscript.Category,
+                                                 Passport = conscript.Passport,
+                                                 Snils = conscript.Snils,
+                                                 Status = conscript.Status
+                                             };
+                        listviewUsers.ItemsSource = listConscripts.ToList();
+                    });
+                }
+                await Task.Delay(3000);
             }
         }
 
