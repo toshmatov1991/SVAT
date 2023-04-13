@@ -8,6 +8,7 @@ using iText.Layout.Element;
 using iText.Layout.Properties;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Win32;
+using Org.BouncyCastle.Asn1.X500;
 using Soliders.Models;
 using System;
 using System.Collections.Generic;
@@ -229,17 +230,39 @@ namespace Soliders
 
                     Cell cell1 = new Cell().Add(new Paragraph($"Проживающему по адресу: {adressPropiska.Text}")).SetFont(f2);
 
-                    Cell cell2 = new Cell()
-                                
-                                .Add(new Paragraph($"Повестка")).SetFont(f2).SetFontSize(30);
-                    Cell cell3 = new Cell().Add(new Paragraph($"")).SetFont(f2);
-                    Cell cell4 = new Cell().Add(new Paragraph($"")).SetFont(f2);
+                    Cell cell2 = new Cell().Add(new Paragraph($"")).SetFont(f2);
+
+                    Cell cell3 = new Cell().Add(new Paragraph($"ПОВЕСТКА")).SetFont(f2).SetFontSize(28).SetPaddingLeft(100);
+                    Cell cell4 = new Cell().Add(new Paragraph($"На основании Закона РФ")).SetFont(f2).SetFontSize(24).SetPaddingLeft(100);
+                    Cell cell5 = new Cell().Add(new Paragraph($"\"О воинской обязанности и военной службе\"")).SetFont(f2).SetFontSize(24).SetPaddingLeft(100);
+                    Cell cell6 = new Cell().Add(new Paragraph($"")).SetFont(f2);
+
+                    Random rnd = new();
+                    var startDate = new DateTime(2022, 1, 1);
+                    var newDate = startDate.AddDays(rnd.Next(366));
+
+                    Cell cell7 = new Cell().Add(new Paragraph($"Приказываю \"{newDate.ToString().Substring(0, 10)}\" года")).SetFont(f2);
+
+                    Cell cell8 = new Cell().Add(new Paragraph($"к 09:00 часам прибыть на призывной пункт при Ногинском ОГВК по адресу: г. Ногинск, ул. Воздушных Десантников, д. 26 в кабинет № 10 для прохождения военной службы ")).SetFont(f2);
+
+                    Cell cell9 = new Cell().Add(new Paragraph($"М.П. Ногинский горвоенком")).SetFont(f2);
+
+                    Cell cell10 = new Cell().Add(new Paragraph($"Искоростинский")).SetFont(f2);
+
+                   
+
 
                     doc.Add(cell);
                     doc.Add(cell1);
                     doc.Add(cell2);
                     doc.Add(cell3);
                     doc.Add(cell4);
+                    doc.Add(cell5);
+                    doc.Add(cell6);
+                    doc.Add(cell7);
+                    doc.Add(cell8);
+                    doc.Add(cell9);
+                    doc.Add(cell10);
                     doc.Close();
                 });
 
@@ -259,6 +282,16 @@ namespace Soliders
             var c = Directory.GetParent(y).FullName;
             var r = Directory.GetParent(c).FullName + @"\DA\arial.ttf";
             return r;
+        }
+
+
+        private Paragraph CenteredParagraph(Text text, float width)
+        {
+            var tabStops = new List<TabStop> { new TabStop(width / 2, TabAlignment.CENTER) };
+            var output = new Paragraph().AddTabStops(tabStops);
+            output.Add(new Tab())
+                    .Add(text);
+            return output;
         }
 
     }
