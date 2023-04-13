@@ -62,7 +62,7 @@ namespace Soliders
                         listviewUsers.ItemsSource = listConscripts.ToList();
                     });
                 }
-                await Task.Delay(3000);
+                await Task.Delay(5000);
             }
         }
 
@@ -110,8 +110,6 @@ namespace Soliders
       
             MorePerson more = new(Convert.ToInt32(str));
             more.ShowDialog();
-
-
 
             static string ReturnIdThePerson(string a)
             {

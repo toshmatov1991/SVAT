@@ -202,11 +202,7 @@ namespace Soliders
             {
                 Thread thread = new(FormingTheAgenda);
                 thread.Start();
-
-
             }
-
-
         }
 
         //Формирование повестки

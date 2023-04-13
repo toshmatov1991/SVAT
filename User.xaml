@@ -49,5 +49,27 @@
         <Button Grid.Row="2" x:Name="ListPerson" Grid.Column="6" VerticalAlignment="Top" Width="120" Height="55" Background="AliceBlue" Click="Button_Click_2">
             <TextBlock FontSize="18" TextAlignment="Center"><Run Text="Список"/><LineBreak/><Run Text="сотрудников"/></TextBlock>
         </Button>
+        <ComboBox  FontSize="17"
+                   Name="statusProsto"
+                   SelectedIndex="0" 
+                   Grid.Row="5"
+                   Grid.Column="2"
+                   Grid.ColumnSpan="2"
+                   VerticalAlignment="Center"
+                   VerticalContentAlignment="Center"
+                   HorizontalContentAlignment="Center"
+                    HorizontalAlignment="Left"
+                   Margin="25,0,0,0" Width="171" Height="32">
+            <TextBlock>Все</TextBlock>
+            <TextBlock>Не служил</TextBlock>
+            <TextBlock>Служит</TextBlock>
+            <TextBlock>Служил</TextBlock>
+        </ComboBox>
+
+
+
+
+
+
     </Grid>
 </Window>
