@@ -20,6 +20,8 @@ namespace Soliders
 {
     public partial class User : Window
     {
+        bool startUpdate = true;
+
         public User()
         {
             InitializeComponent();
@@ -39,7 +41,7 @@ namespace Soliders
         private async void ListConscripts()
         {
 
-            while (true)
+            while (startUpdate)
             {
                 using (PrContext db = new())
                 {
@@ -62,7 +64,7 @@ namespace Soliders
                         listviewUsers.ItemsSource = listConscripts.ToList();
                     });
                 }
-                await Task.Delay(5000);
+                await Task.Delay(2000);
             }
         }
 
@@ -155,5 +157,42 @@ namespace Soliders
         }
 
 
+
+
+        //Выборка по статусу
+        private void SelectList(object sender, EventArgs e)
+        {
+            if(statusProsto.Text == "Все")
+            {
+                startUpdate = true;
+                ListConscripts();
+                return;
+            }
+
+            else
+            {
+                startUpdate = false;
+
+                using (PrContext db = new())
+                {
+                    var listConscripts = from conscript in db.Conscripts
+                                         where conscript.Status == statusProsto.Text
+                                         select new
+                                         {
+                                             conscript.Id,
+                                             Firstname = conscript.Firstname,
+                                             Lastname = conscript.Lastname,
+                                             Name = conscript.Name,
+                                             DateOfBirth = conscript.Dateof,
+                                             Category = conscript.Category,
+                                             Passport = conscript.Passport,
+                                             Snils = conscript.Snils,
+                                             Status = conscript.Status
+                                         };
+                    listviewUsers.ItemsSource = listConscripts.ToList();
+                }
+            }
+           
+        }
     }
 }

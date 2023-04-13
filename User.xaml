@@ -59,7 +59,7 @@
                    VerticalContentAlignment="Center"
                    HorizontalContentAlignment="Center"
                     HorizontalAlignment="Left"
-                   Margin="25,0,0,0" Width="171" Height="32">
+                   Margin="25,0,0,0" Width="171" Height="32" DropDownClosed="SelectList">
             <TextBlock>Все</TextBlock>
             <TextBlock>Не служил</TextBlock>
             <TextBlock>Служит</TextBlock>
