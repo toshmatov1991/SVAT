@@ -26,11 +26,6 @@ namespace Soliders
         {
             InitializeComponent();
             Start();
-            //PersonData person = new();
-            //person.Show();
-            User user = new();
-            user.Show();
-            Close();
         }
 
         private void Start()

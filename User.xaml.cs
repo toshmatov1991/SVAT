@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -27,15 +28,35 @@ namespace Soliders
             InitializeComponent();
             ListConscripts();
             AdminOrNotAdmin();
+            
         }
 
         public User(string iduser, int idAdmin)
         {
             InitializeComponent();
             Title = iduser;
-            Thread thread = new(ListConscripts);
-            thread.Start();
+            //Thread thread = new(ListConscripts);
+            //thread.Start();
             AdminOrNotAdmin();
+            using(PrContext db = new())
+            {
+                var listConscripts = from conscript in db.Conscripts
+                                     select new
+                                     {
+                                         conscript.Id,
+                                         Firstname = conscript.Firstname,
+                                         Lastname = conscript.Lastname,
+                                         Name = conscript.Name,
+                                         DateOfBirth = conscript.Dateof,
+                                         Category = conscript.Category,
+                                         Passport = conscript.Passport,
+                                         Snils = conscript.Snils,
+                                         Status = conscript.Status
+                                     };
+                listviewUsers.ItemsSource = listConscripts.ToList();
+            }
+           
+       
         }
 
         private async void ListConscripts()
@@ -193,6 +214,30 @@ namespace Soliders
                 }
             }
            
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            using (PrContext db = new())
+            {
+
+                
+                    var listConscripts = from conscript in db.Conscripts
+                                         select new
+                                         {
+                                             conscript.Id,
+                                             Firstname = conscript.Firstname,
+                                             Lastname = conscript.Lastname,
+                                             Name = conscript.Name,
+                                             DateOfBirth = conscript.Dateof,
+                                             Category = conscript.Category,
+                                             Passport = conscript.Passport,
+                                             Snils = conscript.Snils,
+                                             Status = conscript.Status
+                                         };
+                    listviewUsers.ItemsSource = listConscripts.ToList();
+                
+            }
         }
     }
 }

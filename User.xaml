@@ -65,6 +65,7 @@
             <TextBlock>Служит</TextBlock>
             <TextBlock>Служил</TextBlock>
         </ComboBox>
+        <Button Grid.Column="4" Content="Обновить" HorizontalAlignment="Left" Margin="32,41,0,0" Grid.Row="5" VerticalAlignment="Top" Height="63" Width="115" Click="Button_Click_3"/>
 
 
 
